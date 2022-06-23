@@ -1,0 +1,43 @@
+@import "colors";
+@import "list";
+
+.sitemap {
+  ul {
+    @include reset-list;
+
+    li {
+      padding: 0.75rem;
+      text-align: left;
+
+      &:before {
+        content: "";
+        margin: 0;
+        padding: 0;
+        text-indent: inherit;
+        background: transparent;
+      }
+
+      a {
+        color:$site-tertiary-link-color;
+
+        &:hover {
+          color:$site-tertiary-link-hover-color;
+        }
+      }
+
+      ul {
+        &.sitemap-sub-menu {
+          li {
+            padding-left:2.5rem;
+
+            &:before {
+              @include bullet-list-li-before;
+              margin-left: 1rem;
+              background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCAxNCI+PHBhdGggZD0iTTcgLjFjMy44IDAgNi45IDMuMSA2LjkgNi45cy0zLjEgNi45LTYuOSA2LjlTLjEgMTAuOC4xIDcgMy4yLjEgNyAuMW0yLjEgNy4xLTMgM2MtLjEuMS0uMy4xLS40IDBsLS44LS43Yy0uMS0uMi0uMS0uNCAwLS41bDItMi0xLjEtMS4yLS45LS44Yy0uMS0uMS0uMS0uMyAwLS40bC43LS43Yy4xLS4xLjMtLjEuNCAwbDIgMiAxIDFjLjIgMCAuMi4yLjEuM3oiIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMyZmM5OTEiLz48L3N2Zz4=");
+            }
+          } /* end li */
+        } /* end sitemap-sub-menu */
+      } /* end ul */
+    } /* end li */
+  } /* end ul */
+} /* end sitemap */

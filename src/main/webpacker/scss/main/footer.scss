@@ -1,0 +1,329 @@
+@import "colors";
+@import "node_modules/bootstrap/scss/_variables";
+
+@mixin reset-margins {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list {
+  @include reset-margins;
+  list-style: none;
+}
+
+#site-footer {
+  .footer-help-wrapper {
+    h2 {
+      font-size: 2rem;
+      color:$site-footer-primary-h2-color;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 0.028rem;
+    }
+
+    .help-col-ticket {
+      background:$site-footer-primary-col-bg-color;
+      padding: 2rem;
+
+      .help-btn {
+        .btn {
+          border-radius: 0;
+          letter-spacing: 0.07rem;
+          font-weight: 600;
+        }
+
+        .btn-primary {
+          border: none;
+          background: $site-footer-primary-col-button-bg-color;
+          color: $site-footer-primary-col-button-color;
+          text-transform: uppercase;
+          font-size: $site-footer-button-font-size;
+          vertical-align: middle;
+
+          &:hover {
+            background: $site-footer-primary-col-button-hover-bg-color;
+            color: $site-footer-primary-col-button-hover-color;
+          }
+
+          &:focus {
+            background-color: $site-footer-primary-col-button-hover-bg-color;
+            color: $site-footer-primary-col-button-hover-color !important;
+            box-shadow: 0 0 0 0.25rem $site-footer-primary-col-button-focus-box-shadow-color;
+          }
+
+          div {
+            display: inline-block;
+          }
+        } /*end btn-primary */
+      }/*end help-btn  */
+
+      p {
+        color:$site-footer-primary-col-color;
+      }
+    } /*end help-col-ticket */
+
+    .help-col-management {
+      background:$site-footer-secondary-col-bg-color;
+      padding: 2rem;
+
+      .help-btn {
+        .btn {
+          border-radius: 0;
+          letter-spacing: 0.07rem;
+          font-weight: 600;
+        }
+
+        .btn-primary {
+          border: none;
+          background: $site-footer-secondary-col-button-bg-color;
+          color: $site-footer-secondary-col-button-color;
+          text-transform: uppercase;
+          font-size: $site-footer-button-font-size;
+          vertical-align: middle;
+
+          &:hover {
+            background: $site-footer-secondary-col-button-hover-bg-color;
+            color: $site-footer-secondary-col-button-color;
+          }
+
+          &:focus {
+            background-color: $site-footer-secondary-col-button-hover-bg-color;
+            color: $site-footer-secondary-col-button-color !important;
+            box-shadow: 0 0 0 0.25rem $site-footer-secondary-col-button-focus-box-shadow-color;
+          }
+
+          div {
+            display: inline-block;
+          }
+        } /*end btn-primary */
+      }/*end help-btn  */
+
+      p {
+        color:$site-footer-secondary-col-color;
+      }
+    } /*end help-col-management */
+  } /*end footer-help-wrapper */
+
+  .footer-menu {
+    padding:0.5rem 1rem;
+
+    .rack-track-ico {
+      width: 32px;
+      height: 44px;
+      margin-left: 0.375rem;
+
+      svg {
+        fill:$site-primary-logo-ico-color;
+      }
+    }
+
+    .tel-ico {
+      width: 22px;
+      height: 20px;
+
+      svg {
+        fill:$site-white-color;
+      }
+    }
+
+    .p6-s {
+      padding-left: 0.375rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color:$site-footer-secondary-h2-color;
+      padding: 0 0.375rem;
+    }
+
+    .call-btn {
+      .btn {
+        border-radius:0;
+        letter-spacing: 0.07rem;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        border:none;
+        background:$site-footer-button-bg-color;
+        color:$site-footer-button-color;
+        text-transform: uppercase;
+        font-size:$site-footer-button-font-size;
+        vertical-align: middle;
+
+        &:hover {
+          background: $site-footer-button-hover-bg-color;
+          color:$site-footer-button-color;
+        }
+
+        &:focus {
+          background-color: $site-footer-button-hover-bg-color;
+          color:$site-footer-button-color !important;
+          box-shadow: 0 0 0 0.25rem $site-footer-button-focus-box-shadow-color;
+        }
+
+        div {
+          display: inline-block;
+        }
+      } /*end btn-primary */
+
+      a {
+        &:focus {
+          svg {
+            background-color:transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    } /*end call-btn */
+
+    ul {
+      @include reset-list;
+
+      li {
+        padding: 0.25rem 0;
+
+        a {
+          color :$site-footer-link-color;
+          text-decoration: none;
+
+
+          &:hover {
+            color :$site-footer-link-hover-color;
+          }
+        }
+      } /* end li */
+    } /* end ul */
+  } /*end footer-menu */
+
+  .footer {
+    background:$site-footer-bg-color;
+    color:$site-footer-color;
+    padding:0.5rem;
+    font-size: 0.7rem;
+
+    @media (min-width: map-get($grid-breakpoints, sm)) { /* ≥576px */
+      font-size: $site-footer-font-size;
+    }
+
+    ul {
+      @include reset-list;
+      li {
+        display: inline-block;
+        padding:0 0.2rem;
+
+        @media (min-width: map-get($grid-breakpoints, sm)) { /* ≥576px */
+          padding:0 0.9rem;
+        }
+
+        &:first-child {
+          padding:0 0.2rem 0 0;
+        }
+
+        a {
+          color :$site-footer-link-color;
+
+          &:hover {
+            color :$site-footer-link-hover-color;
+          }
+        }
+      } /* end li */
+
+      &.social {
+        text-align: right;
+        li {
+          display: inline-block;
+          padding:0 0.2rem;
+
+          @media (min-width: map-get($grid-breakpoints, sm)) { /* ≥576px */
+            padding:0 0.4rem;
+          }
+          a {
+            .facebook {
+              width: 14px;
+              height: 14px;
+              fill:$site-footer-social-link-color;
+
+              @media (min-width: map-get($grid-breakpoints, sm)) { /* ≥576px */
+                width: 20px;
+                height: 20px;
+              }
+            }
+
+            .twitter {
+              width: 14px;
+              height: 14px;
+              fill:$site-footer-social-link-color;
+
+              @media (min-width: map-get($grid-breakpoints, sm)) { /* ≥576px */
+                width: 20px;
+                height: 20px;
+              }
+            }
+
+            &:hover {
+              .facebook, .twitter {
+                fill:$site-footer-social-link-hover-color;
+              }
+            }
+
+            &:focus {
+              background-color: $site-focus-bg-color;
+              box-shadow: 0 0 1px 1px $site-focus-border-color;
+
+              svg {
+                box-shadow: none;
+              }
+            }  /* a:focus */
+          } /* end a */
+        }
+      } /* end social */
+    }  /* end ul */
+    .copyright {
+      padding: 0 0.9rem;
+    }
+  } /* end footer */
+
+  a {
+    &.scrollUp{
+      -webkit-transition: all 400ms ease-in-out;
+      -moz-transition: all 400ms ease-in-out;
+      -o-transition: all 400ms ease-in-out;
+      -ms-transition: all 400ms ease-in-out;
+      transition: all 400ms ease-in-out;
+      position: fixed;
+      display: none;
+      vertical-align: bottom;
+      bottom:0;
+      right:0;
+      text-transform:lowercase;
+      z-index:9990;
+      padding:0;
+    }
+
+    .scroll {
+      display:inline-block;
+      vertical-align:middle;
+      background-repeat:no-repeat;
+      background-position:center left;
+      margin-top:-3px;
+      width:42px;
+      height:42px;
+      background-size: 42px 42px;
+      background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiIgdmlld0JveD0iMCAwIDQyIDQyIj48cGF0aCBmaWxsPSIjMzMzZjYxIiBkPSJNMCAwaDQydjQySDB6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTMwIDI1LjJsLTEgLjljLS4xLjEtLjMuMi0uNC4yLS4xIDAtLjMtLjEtLjQtLjJMMjEgMTguOWwtNy4yIDcuMmMtLjEuMS0uMy4yLS40LjItLjEgMC0uMy0uMS0uNC0uMmwtMS0uOWMtLjEtLjEtLjItLjMtLjItLjQgMC0uMS4xLS4zLjItLjRsOC41LTguNWMuMS0uMS4zLS4yLjQtLjJzLjMuMS40LjJsOC41IDguNWMuMS4xLjIuMy4yLjQuMS4yLjEuMyAwIC40eiIvPjwvc3ZnPg==");
+
+      &:hover {
+        background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiIgdmlld0JveD0iMCAwIDQyIDQyIj48cGF0aCBmaWxsPSIjZGYzMzExIiBkPSJNMCAwaDQydjQySDB6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTMwIDI1LjJsLTEgLjljLS4xLjEtLjMuMi0uNC4yLS4xIDAtLjMtLjEtLjQtLjJMMjEgMTguOWwtNy4yIDcuMmMtLjEuMS0uMy4yLS40LjItLjEgMC0uMy0uMS0uNC0uMmwtMS0uOWMtLjEtLjEtLjItLjMtLjItLjQgMC0uMS4xLS4zLjItLjRsOC41LTguNWMuMS0uMS4zLS4yLjQtLjJzLjMuMS40LjJsOC41IDguNWMuMS4xLjIuMy4yLjQuMS4yLjEuMyAwIC40eiIvPjwvc3ZnPg==");
+        }
+      }
+
+    &:focus {
+      svg {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }  /* a:focus */
+  }  /*end scrollUp */
+} /*end site-footer */

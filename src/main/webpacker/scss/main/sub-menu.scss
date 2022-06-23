@@ -1,0 +1,98 @@
+@import "colors";
+@import "list";
+@import "node_modules/bootstrap/scss/_variables";
+
+.featuresMenu {
+  background: $site-fourth-bg-color;
+  height:100%;
+
+    ul {
+      background:$site-fourth-bg-color;
+      @include reset-list;
+
+      li {
+        @include reset-list;
+        display: block;
+        padding:0.75rem;
+        text-align: left;
+        background: $site-fourth-bg-color;
+        border-bottom:1px solid $site-fourth-bg-color;
+
+        &:before {
+          content: "";
+          margin: 0;
+          padding: 0;
+          text-indent: inherit;
+          background:transparent;
+        }
+
+        &:first-child {
+          background: $site-green-color;
+          border-bottom:1px solid $site-fourth-bg-color;
+
+          &:hover {
+            background: $site-green-color;
+            border-bottom:1px solid $site-fourth-bg-color;
+
+            a {
+              color:$site-fourth-color;
+            }
+          }
+        }
+
+        a {
+          @extend .text-uppercase;
+          text-decoration: none;
+          color:$site-fourth-color;
+          font-size: 0.96rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          transition:0.2s ease-in-out;
+          text-align: left;
+          display: block;
+
+          .svgIco {
+            @extend .pe-2;
+
+            svg {
+              width:22px;
+              height:22px;
+
+              .icoLink {
+                fill:$site-tertiary-link-ico-link-white-color;
+              }
+
+              .icoHighlight {
+                fill:$site-tertiary-link-ico-hover-color;
+              }
+            }
+          }  /* end svgIco */
+        } /* end a */
+
+        &:hover, &.active {
+          background: $site-primary-bg-color;
+          color:$site-primary-color;
+
+          a {
+            color: $site-primary-color;
+
+            .svgIco {
+              svg {
+                .icoLink {
+                  fill:$site-tertiary-link-ico-link-color;
+                }
+                .icoHighlight {
+                  fill:$site-tertiary-link-ico-hover-color;
+                }
+              } /*end svg */
+            }
+          }
+        }
+
+        &.active {
+          background: $site-hero-green-bg-color;
+        }
+      } /* end li */
+    } /* end ul */
+  } /* end featuresMenu */
+

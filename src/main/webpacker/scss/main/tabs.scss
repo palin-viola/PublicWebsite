@@ -1,0 +1,131 @@
+@import "colors";
+@import "node_modules/bootstrap/scss/_variables";
+
+.tab-container {
+  position: relative;
+  z-index: 10;
+
+  .tab-button-wrap {
+
+    button {
+      &.tab-link {
+        @extend .py-2, .text-uppercase;
+        background: $site-sixth-bg-color;
+        color: $site-sixth-link-color;
+        border:none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0.90rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition:0.2s ease-in-out;
+        text-align: left;
+        width:100%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+
+        @media (min-width: map-get($grid-breakpoints, md)) { /* ≥768px */
+          width:auto;
+          padding-right: 0.4rem;
+          padding-left: 0.4rem;
+          font-size: 0.88rem;
+        }
+
+        @media (min-width: map-get($grid-breakpoints, lg)) { /* ≥992px */
+          font-size: 0.9rem;
+          padding-right: 0.7rem;
+          padding-left: 0.7rem;
+        }
+
+        @media (min-width: map-get($grid-breakpoints, xl)) { /* ≥1200px */
+          font-size: 0.92rem;
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+
+        svg {
+          width: 28px;
+          height: 28px;
+          @extend .pe-2;
+
+          .icoLink {
+            fill:$site-sixth-link-ico-link-color;
+          }
+
+          .icoHighlight {
+            fill:$site-sixth-link-ico-link-white-color;
+          }
+        } /*end svg */
+
+        &:hover, &.active {
+          background: $site-primary-bg-color;
+          color:$site-primary-color;
+
+          svg {
+            .icoLink {
+              fill:$site-sixth-link-ico-link-color;
+            }
+            .icoHighlight {
+              fill:$site-sixth-link-ico-hover-color;
+            }
+          } /*end svg */
+        } /*end hover */
+      } //end tab-link
+
+      &:focus {
+        background: $site-primary-bg-color;
+        color:$site-primary-color;
+
+        svg {
+          .icoLink {
+            fill:$site-sixth-link-ico-link-color;
+          }
+          .icoHighlight {
+            fill:$site-sixth-link-ico-hover-color;
+          }
+        } /*end svg */
+      }
+    } /* end button */
+  } //end tab-button-wrap
+
+  .tab-content {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 0;
+
+    h2 {
+      @extend .text-uppercase, .pb-3;
+      color:$site-green-color;
+      font-size: 1.2rem;
+    }
+
+    img {
+      text-align: center;
+    }
+  } //end tab-content
+} //end tab-container
+
+@media print {
+  .tab-link {
+    display: none;
+  }
+
+  .tab-content {
+    padding: 0;
+    border: none !important;
+    page-break-after: always;
+
+    table {
+      page-break-after: always;
+    }
+
+    .shadow-sm {
+      box-shadow: none !important;
+    }
+
+    p {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  } //end tab-content
+}

@@ -1,0 +1,238 @@
+@import "colors";
+@import "list";
+@import "node_modules/bootstrap/scss/_variables";
+
+.contact-page {
+  height: 100%;
+
+  .contact-information {
+    h2 {
+      @extend .text-uppercase, .py-2;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color:$site-contact-h2-color;
+    }
+
+    h3 {
+      @extend .py-2;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color:$site-contact-h3-color;
+    }
+
+    h4 {
+      @include reset-margins;
+      padding-left:0.375rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color:$site-contact-h4-color;
+      text-align: left;
+    }
+
+    a {
+      text-decoration: none;
+      color:$site-secondary-link-color;
+
+      &:hover {
+        color:$site-secondary-link-hover-color;
+      }
+
+      &.gMap {
+        @extend .text-uppercase;
+        text-decoration: none;
+        font-weight: 800;
+        color:$site-primary-link-color;
+
+        &:hover {
+          color:$site-primary-link-hover-color;
+        }
+      }
+    }
+
+    .info-div {
+      @extend .py-2;
+      border-bottom:1px solid $site-contact-border-color;
+
+      .svg-col, .text-col {
+        display: inline-block;
+      }
+
+      .svg-col {
+        width:32px;
+        vertical-align: top;
+      }
+
+      .text-col {
+        width:auto;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+
+        .icoLink {
+          fill:$site-contact-ico-link-color;
+        }
+
+        .icoHighlight {
+          fill:$site-contact-ico-active-color;
+        }
+      }
+
+      &:last-child {
+        border-bottom:none;
+      }
+    } /* end info-div */
+  } /* end contact-information */
+
+  .contact-form {
+    @extend .p-5;
+    background: $site-fifth-bg-color;
+    color:$site-fifth-color;
+
+    h1 {
+      @extend .p-0;
+      padding-top: 0.813rem !important;
+      color:$site-contact-h1-color;
+    } /* end h1 */
+
+    a {
+      color:$site-contact-form-link-color;
+
+      &:hover {
+        color:$site-contact-form-hover-color;
+      }
+    } /* end a */
+
+    form {
+      input, textarea {
+        &:focus {
+          box-shadow: 0 0 0 0.25rem $site-contact-form-input-focus-box-shadow-color;
+        }
+      }
+
+      label {
+        display: none;
+      }
+
+      input {
+        &.first-name,  &.last-name, &.email, &.phone {
+          vertical-align:middle;
+          padding-left:2rem;
+          background-size: 16px 16px;
+          background-repeat:no-repeat;
+          background-position: 0.438rem 0.5rem;
+        }
+
+        &.first-name {
+          background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMiI+PHBhdGggZmlsbD0iI2I4YmNjOCIgZD0iTTE0LjEgMTEuOWMxLjUtMSAyLjUtMi43IDIuNS00LjYgMC0zLjEtMi41LTUuNi01LjYtNS42LTMuMSAwLTUuNiAyLjUtNS42IDUuNiAwIDEuOSAxIDMuNiAyLjUgNC42LTMuNCAxLjMtNS44IDQuNS01LjggOC40aDEuNWMwLTQuMSAzLjMtNy40IDcuNC03LjQgNC4xIDAgNy40IDMuMyA3LjQgNy40aDEuNWMwLTMuOC0yLjQtNy4xLTUuOC04LjRtLTMuMS0uNWMtMi4zIDAtNC4xLTEuOC00LjEtNC4xUzguNyAzLjIgMTEgMy4yczQuMSAxLjggNC4xIDQuMWMwIDIuMi0xLjggNC4xLTQuMSA0LjEiLz48L3N2Zz4=");
+        }
+
+        &.last-name {
+          background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMiI+PHN0eWxlPi5zdDB7ZmlsbDpub25lO3N0cm9rZTojYjhiY2M4O3N0cm9rZS13aWR0aDoxLjIyNDM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwfS5zdDF7ZmlsbDojYjhiY2M4fTwvc3R5bGU+PGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iNi45IiBjeT0iMTAuNiIgcj0iMi40Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTE3LjEgMTcuOUg0LjljLTIgMC0zLjctMS42LTMuNy0zLjdWNy43YzAtMiAxLjYtMy43IDMuNy0zLjdoMTIuMmMyIDAgMy43IDEuNiAzLjcgMy43djYuNWMwIDIuMS0xLjYgMy43LTMuNyAzLjd6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTExLjggOWg1Ljd2LjhoLTUuN3pNMTEuOCAxMi4yaDQuMXYuOGgtNC4xeiIvPjwvc3ZnPg==");
+        }
+
+        &.email {
+          background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMiI+PHN0eWxlPi5zdDB7ZmlsbDpub25lO3N0cm9rZTojYjhiY2M4O3N0cm9rZS13aWR0aDoxLjM0OTE7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEuNSA1LjJoMTl2MTEuNmgtMTl6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTIwLjUgNS4yIDExIDEyLjYgMS41IDUuMiIvPjwvc3ZnPg==");
+        }
+
+        &.phone {
+          background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMiI+PHBhdGggZD0iTTIuNCA3Yy4yIDIuNiAxLjUgNS43IDQuMiA4LjRzNS44IDQgOC40IDQuMmMuOS4xIDQuMS0yLjUgNC41LTMuOC4zLS45LjItMS42LS42LTJsLTItMS4xYy0uNS0uMy0uOS0uMS0xLjMuNS0uOSAxLjMtMS40IDEuNS0yLjUuOXMtMS44LTEuMy0yLjgtMi4zYy0xLTEtMS43LTEuNy0yLjMtMi44LS44LTEuMS0uNS0xLjUuOC0yLjUuNi0uNC44LS44LjUtMS4zbC0xLjEtMmMtLjQtLjktMS4xLTEtMi0uNkM0LjkgMyAyLjMgNi4yIDIuNCA3eiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I2I4YmNjODtzdHJva2Utd2lkdGg6MS41O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMCIvPjwvc3ZnPg==");
+        }
+      }
+
+      textarea {
+        &.comment {
+          vertical-align: middle;
+          padding-left: 2rem;
+          background-size: 16px 16px;
+          background-repeat: no-repeat;
+          background-position: 0.438rem 0.5rem;
+        }
+
+        &.comment {
+          background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMiI+PHN0eWxlPi5zdDB7ZmlsbDpub25lO3N0cm9rZTojYjhiY2M4O3N0cm9rZS13aWR0aDoxLjIwMjU7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEuOSAzLjhoMTIuOXYxMC4xSDQuMmwtMi4zIDEuOXoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNOS4xIDE1LjN2MWg4LjdsMi4zIDEuOXYtMTJoLTMuNE00LjMgNi43aDguMU00LjMgMTAuNWg2LjJNNC4zIDguNmg4LjEiLz48L3N2Zz4=");
+        }
+      }
+
+      button {
+        &.btn {
+          @extend .px-5;
+          border-radius:0;
+          letter-spacing: 0.07rem;
+          font-weight: 600;
+        }
+
+        &.btn-primary {
+          border:none;
+          background:$site-contact-form-button-bg-color;
+          color:$site-contact-form-button-color;
+          text-transform: uppercase;
+          vertical-align: middle;
+
+          &:hover {
+            background: $site-contact-form-button-hover-bg-color;
+            color:$site-contact-form-button-hover-color;
+          }
+
+          &:focus {
+            background-color: $site-contact-form-button-hover-bg-color;
+            color:$site-contact-form-button-hover-color !important;
+            box-shadow: 0 0 0 0.25rem $site-contact-form-button-focus-box-shadow-color;
+          }
+
+          div {
+            display: inline-block;
+          }
+        } /*end btn-primary */
+      }
+    }
+  } /* end contact-form */
+
+  /* success submission styles start */
+  .submit-success {
+    background-color: $site-green-color;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    width: 240px;
+    color: $site-white-color;
+    margin: 0 auto;
+
+    @media (min-width : 576px) {
+      width : 320px;
+    } /* .col-md- */
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      z-index: 0;
+      border-left: 32px solid $site-white-color;
+      border-top: 32px solid $site-green-color;
+    }
+
+    h6, p {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    h6 {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      padding-bottom: 2rem;
+    }
+  } /* submit-success */
+
+  .submit-failure {
+    @extend .submit-success;
+    background-color: $site-red-color;
+    &:before {
+      border-top: 32px solid $site-red-color;
+    }
+  }
+}/* end contact-page */

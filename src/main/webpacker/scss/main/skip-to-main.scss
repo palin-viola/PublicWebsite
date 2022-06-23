@@ -1,0 +1,30 @@
+@import "colors";
+#skipLink-container {
+  background: $site-skip-link-color;
+  text-align: center;
+
+  div {
+    margin: 0 auto;
+    max-width: 1020px;
+    text-align: left;
+  }
+
+  .skipLink {
+    display : -moz-inline-stack;
+    display: inline-block;
+    left: -9999em;
+    margin: 0.75rem 0 0 30px;
+    position: absolute;
+    padding-top: 1px;
+
+    &:focus,
+    &:visited {
+      color: $site-skip-link-color;
+    }
+
+    &:focus {
+      left: 0;
+      z-index: 1;
+    }
+  }
+}

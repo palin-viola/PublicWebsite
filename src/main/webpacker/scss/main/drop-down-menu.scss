@@ -1,0 +1,91 @@
+@import "colors";
+@import "node_modules/bootstrap/scss/_variables";
+
+@mixin reset-margins {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header {
+  .nav-container {
+    .navigationBar {
+      #menu {
+        .gridContainer {
+          @include reset-margins;
+
+          .gridItem {
+            @include reset-margins;
+            @extend .py-2;
+
+            &.menuIcons {
+              @extend .pe-2;
+
+              &.feature-ico {
+                svg {
+                  fill:$site-tertiary-link-ico-color;
+                }
+              }
+
+              svg {
+                width: 26px;
+                height: 26px;
+
+                .icoLink {
+                  fill:$site-tertiary-link-ico-link-color;
+                }
+                .icoBorder {
+                  fill:$site-tertiary-link-ico-border-color;
+                }
+
+                .icoHighlight {
+                  fill:$site-tertiary-link-ico-hover-color;
+                }
+              }
+            } /* end menuIcons */
+
+            &.menuText {
+              padding: 0;
+              text-transform: uppercase;
+              font-size:0.92rem;
+
+              @media (min-width: map-get($grid-breakpoints, sm)) { /* sm: 576px */
+                font-size:$site-primary-font-size;
+              }
+
+              h2{
+                color:$site-tertiary-link-hover-color;
+                font-size: 1.1rem;
+                font-weight:600;
+                padding: 0;
+                text-transform: uppercase;
+              }
+
+              p {
+                font-size:0.9rem !important;
+                font-weight: 400;
+                color:$site-tertiary-link-para-color;
+                text-transform: none;
+                letter-spacing: normal;
+                padding-right:2.5rem;
+
+                @media (min-width: map-get($grid-breakpoints, sm)) { /* sm: 576px */
+                  padding-right:0;
+                }
+              }
+
+            } /* end menuText */
+          } /* end gridItem */
+        } /* end gridContainer */
+      } /* end #menu */
+
+      /* Clearfix */
+      .menu:after, .menu:before {
+        content: "";
+        display: table;
+      }
+      .menu:after {
+        clear: both;
+      }
+    } /* navigationBar */
+  } /* nav-container */
+} /* end header */

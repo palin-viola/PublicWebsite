@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://marketing2.rack-track.com/sitemap.xml.gz
+Sitemap: http://marketing2.rack-track.com/sitemap.xml.gz.gz

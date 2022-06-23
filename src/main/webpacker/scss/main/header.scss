@@ -1,0 +1,29 @@
+@import "colors";
+
+#rack-track {
+  svg {
+    width: 200px;
+    height: 62px;
+    margin-left: 0.188rem;
+
+    #RTLogoIco {
+      fill:$site-primary-logo-ico-color;
+    }
+    #RTLogoText {
+      fill:$site-primary-logo-color;
+    }
+  }
+
+  a {
+    padding:0 !important;
+    &:focus {
+      box-shadow: none;
+      background-color: transparent;
+
+      svg {
+        background-color: $site-focus-bg-color;
+        box-shadow: 0 0 1px 1px $site-focus-border-color;
+      }
+    }
+  }
+}

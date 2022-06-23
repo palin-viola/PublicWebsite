@@ -1,0 +1,93 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+}
+.vc_toggle {
+  ul {
+    @include reset-list;
+    margin: 0 1.5rem;
+
+    li {
+      margin-bottom: 0.75rem;
+      padding: 0 !important;
+      border:1px solid #dee2e6;
+
+      &:before {
+        content: "";
+        margin: 0;
+        padding: 0;
+        text-indent: inherit;
+        background:transparent;
+      }
+
+      h3 {
+        @include reset-list;
+        transition: background-color 0.3s ease-in;
+        color: #442892;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0.75rem 3.375rem 0.75rem 1.625rem;
+        position: relative;
+        text-transform: inherit;
+        background: #f8f6f4;
+
+        &:before {
+          background: #2fc991;
+          border-radius: 50%;
+          color: #ffffff;
+          display: inline-block;
+          content: "+";
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+          position: absolute;
+          right: 13px;
+          text-align: center;
+          margin-top: -2px;
+          padding-left:2px;
+          vertical-align: middle;
+          width: 24px;
+          height: 24px;
+        }
+      } //end h3
+
+      &.active {
+        h3 {
+          background: #442892;
+          color: #ffffff;
+
+          &:before {
+            content: "-";
+          }
+        } //end h3
+        div:first-of-type {
+          max-height: 4000px;
+          opacity:1;
+          padding: 1.625rem;
+        }
+      } //end active
+      div:first-of-type {
+        overflow-y: hidden;
+        max-height: 0;
+      }
+
+      div {
+        color: #333f61;
+        padding: 0 1.625rem 0 1.625rem;
+        transition: max-height 0.3s, padding 0.3s;
+        text-indent: 0;
+        margin-top:0;
+
+        ul {
+          li {
+            border:none;
+
+           &:before {
+              margin-left: -1.625rem;
+            }
+          }
+        }
+      } //end div
+    } //end li
+  } //end ul
+} //end vc_toggle
